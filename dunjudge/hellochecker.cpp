@@ -3,11 +3,13 @@ using namespace std;
 
 #define int long long // ~long long man~
 
-//define variables here
+string s;
 
 int32_t main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
-	// code here
+	getline(cin,s);
+	if (s == "Hello World") cout << "OK";
+	else cout << "Wrong Answer";
 	return 0;
 }
