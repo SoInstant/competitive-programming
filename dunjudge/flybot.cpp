@@ -19,20 +19,14 @@ int32_t main() {
 			a[i][j] = s[j];
 		}
 	}
-	for (int i = 0; i < w; ++i) {
-		if (a[0][i] == 'X') z = 0;
-		else dp[0][i] = z;
-	}
-	z = 1;
+	dp[0][0] = 1;
 	for (int i = 0; i < h; ++i) {
-		if (a[i][0] == 'X') z = 0;
-		else dp[i][0] = z;
-	}
-	dp[0][0] = 0;
-	for (int i = 1; i < h; ++i) {
-		for (int j = 1; j < w; ++j) {
+		for (int j = 0; j < w; ++j) {
 			if (a[i][j] != 'X') {
-				dp[i][j] = dp[i][j-1] + dp[i-1][j];
+				if (i-1 < 0 && j - 1 <0) continue;
+				else if (i - 1 < 0) {dp[i][j] = dp[i][j-1]%1000000007;}
+				else if (j -1 < 0) {dp[i][j] = dp[i-1][j]%1000000007;}
+				else {dp[i][j] = (dp[i-1][j] + dp[i][j-1])%1000000007;}
 			}
 		}
 	}
