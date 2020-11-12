@@ -5,19 +5,22 @@ using namespace std;
 
 int n;
 
+bool isPrime(int n) {
+	if (n <= 3) return (n > 1);
+	if (n%2 == 0 || n%3 == 0) return false;
+	int i = 6;
+	while (i * i <= n) {
+		if (n%(i-1) == 0 || n%(i+1) == 0) return false;
+		i += 6;
+	}
+	return true;
+}
+
 int32_t main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 	cin >> n;
-	if (n <= 1) {cout << "Not Prime"; return 0;}
-	else if (n <= 3) {cout << "Prime"; return 0;}
-	if (n%2 == 0) {cout << "Not Prime"; return 0;}
-	else {
-		int upper = sqrt(n);
-		for (int i = 2; i <= upper; ++i) {
-			if (n%i == 0) {cout << "Not Prime"; return 0;}
-		}
-		cout << "Prime";
-	}
+	string ans = isPrime(n)?"Prime":"Not Prime";
+	cout << ans;
 	return 0;
 }
