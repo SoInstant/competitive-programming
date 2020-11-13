@@ -4,6 +4,7 @@ using namespace std;
 #define int long long // ~~~LONG LONG MAN~~~
 
 int n;
+
 int sum_pd(int n) {
 	int sum = 0;
 	for (int i = 1; i <= sqrt(n); ++i) {
