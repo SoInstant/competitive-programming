@@ -6,12 +6,21 @@ using namespace std;
 #define inf_int 1e9
 #define NEWLINE cout << "\n"
 
-// define variables here
+vector<char> v;
 
 int32_t main() {
 	ios::sync_with_stdio(0);
   	cin.tie(0);
   	cout.tie(0);
-	// insert code here
+  	string x;
+  	cin >> x;
+  	for (auto c: x) {
+		if (c != '+') v.push_back(c);
+	}
+	sort(v.begin(),v.end());
+	cout << v[0];
+	for (int i = 1; i < (int)v.size(); ++i) {
+		cout << "+" << v[i];
+	}
   	return 0;
 }

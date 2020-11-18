@@ -6,12 +6,20 @@ using namespace std;
 #define inf_int 1e9
 #define NEWLINE cout << "\n"
 
-// define variables here
+int h,w, pea =  0 , pot = 0;
+char c;
 
 int32_t main() {
 	ios::sync_with_stdio(0);
   	cin.tie(0);
   	cout.tie(0);
-	// insert code here
+	cin >> h >> w;
+	for (int i = 0; i < h*w; ++i) {
+		cin >> c;
+		if (c == 'O') pot++;
+		else if (c == 'N') pea ++;
+	}
+	cout << pot << " " << pea;
+	NEWLINE;
   	return 0;
 }

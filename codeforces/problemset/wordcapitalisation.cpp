@@ -6,12 +6,14 @@ using namespace std;
 #define inf_int 1e9
 #define NEWLINE cout << "\n"
 
-// define variables here
+string s;
 
 int32_t main() {
 	ios::sync_with_stdio(0);
   	cin.tie(0);
   	cout.tie(0);
-	// insert code here
+	cin >> s;
+	if (s[0] >= 'a' && s[0] <= 'z') s[0] = s[0] - 'a' + 'A';
+	cout << s;
   	return 0;
 }

@@ -2,9 +2,6 @@
 using namespace std;
 
 #define int long long // ~~~LONG LONG MAN~~~
-#define inf_ll 1e18
-#define inf_int 1e9
-#define NEWLINE cout << "\n"
 
 // define variables here
 

@@ -6,7 +6,10 @@ using namespace std;
 #define inf_int 1e9
 #define NEWLINE cout << "\n"
 
+typedef pair<int,int> pi;
+
 int n;
+vector<pi> sus;
 
 bool isPrime(int n) {
 	if (n <= 3) return (n > 1);
@@ -24,15 +27,13 @@ int32_t main() {
   	cin.tie(0);
   	cout.tie(0);
 	cin >> n;
-	if (isPrime(n)) {cout << n << "^1\n"; return 0;}
-	for (int i = 2; i <= n; ++i) {
-		if (!isPrime(i)) continue;
-		int counter = 0;
-		while (n%i == 0) {
-			n/= i;
-			counter++;
+	for (int i = n; i > 0; --i) {
+		int age; cin >> age;
+		if (isPrime(i)) {
+			sus.push_back(pi(age, i));
 		}
-		if (counter != 0)cout << i << "^" << counter << "\n";
 	}
+	sort(sus.begin(),sus.end(), greater<pi>());
+	cout << sus[0].second;
   	return 0;
 }
